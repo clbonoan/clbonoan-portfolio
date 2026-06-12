@@ -1,0 +1,28 @@
+# System and user config files
+.bash_history
+.bash_logout
+.bashrc
+.profile
+.gitconfig
+.lesshst
+.viminfo
+.vim/
+.cache/
+.ssh/
+.sudo_as_admin_successful
+.cloud-locale-test.skip
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Node.js
+node_modules/
+.env
+
+# images
+www/images/
