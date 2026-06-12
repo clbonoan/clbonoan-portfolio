@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* tells Tailwind to use Raleway font */
+@layer base {
+    html {
+        font-family: "Raleway", sans-serif;
+    }
+}
+
+body {
+    background-color: #0a0a0a;
+    font-family: "Raleway", sans-serif;
+}
+
+/* INDEX/HOME PAGE */
+#title-container{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#title-header {
+    /*font-family: "Raleway", sans-serif;*/
+    color: white;
+    /* font-size: 110px; */
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#title-desc {
+    /*font-family: "Raleway", sans-serif;*/
+    color: white;
+    /* font-size: 20px; */
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+@media (min-width: 768px) {
+    #title-header {
+        font-size: 110px;   /* desktop size */
+    }
+
+    #title-desc {
+        font-size: 20px;    /* desktop size */
+    }
+}
+
+/* floating images effect on index/home page */
+#cursor-img {
+    transform: translate(-50%, -50%);
+}
+
+@keyframes popIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+.cursor-img-item {
+    position: fixed;
+    pointer-events: none;
+    z-index: 50;
+    animation: popIn 0.2s ease-out forwards;
+    transition: opacity 0.3s ease;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    will-change: transform, opacity;
+}
+
+
+/* .cursor-img-item.fade-out {
+    opacity: 0;
+} */
+
+/* VANILLA CSS NAVIGATION BAR; HANDLED BY TAILWIND */
+/* .navbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: fixed;
+    width: 100%;
+    top: 10px;
+    font-size: 15px;
+}
+
+.nav-left {
+    position: absolute;
+    left: 20px;
+}
+
+.nav-left a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.nav-left a:hover {
+    background-color: transparent;
+}
+
+.nav-right {
+    display: flex;
+    gap: 60px;
+    margin: 0 auto;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.nav-right a:hover {
+    color: #bdbdbd;
+    background-color: transparent;
+}
+
+.nav-clock {
+    position: absolute;
+    right: 20px;
+    color: white;
+    font-weight: 400;
+}
+*/ 
