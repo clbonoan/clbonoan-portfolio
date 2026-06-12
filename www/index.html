@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <title>Christine Bonoan</title>
+    <link rel="icon" type="image/x-icon" href="/images/clb-favicon.ico">
 </head>
 <body>
-    <h1 id="title-header">WORK IN PROGRESS - CLBONOAN</h1>
+    <!-- <nav class="navbar">
+        <div class="nav-left">
+            <a href="/" class="nav-name-link">CLBONOAN</a>
+        </div>
+        <div class="nav-right" id="nav-right">
+            <a href="./index.html">HOME</a>
+            <a href="./about.html">ABOUT</a>
+            <a href="./projects.html">PROJECTS</a>
+            <a href="./contact.html">CONTACT</a>
+        </div>
+        <div class="nav-clock" id="nav-clock"></div>
+    </nav> -->
+
+    <!-- TAILWIND NAVIGATION BAR -->
+    <nav class="flex items-center fixed w-full top-4 text-[15px] z-50">
+        <!-- LEFT SIDE NAV -->
+        <div class="absolute left-5">
+            <a href="/" class="text-white font-normal no-underline">CLBONOAN</a>
+        </div>
+        <!-- RIGHT SIDE NAV -->
+        <div class="hidden md:flex gap-[50px] mx-auto">
+            <a href="./index.html" class="text-white font-normal no-underline hover:text-[#bdbdbd]">HOME</a>
+            <a href="./about.html" class="text-white font-normal no-underline hover:text-[#bdbdbd]">ABOUT</a>
+            <a href="./projects.html" class="text-white font-normal no-underline hover:text-[#bdbdbd]">PROJECTS</a>
+            <a href="./contact.html" class="text-white font-normal no-underline hover:text-[#bdbdbd]">CONTACT</a>            
+        </div>
+        <!-- CLOCK IN NAV BAR -->
+         <div class="hidden md:block absolute right-5 text-white font-normal" id="nav-clock"></div>
+        <!-- hamburger button for mobile view -->
+        <button id="menu-btn" onclick="toggleMenu()" class="md:hidden absolute right-5 text-white font-normal text-[15px] 
+        bg-transparent border-none cursor-pointer tracking-widest">MENU</button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden flex-col gap-4 py-8 pt-16 fixed inset-0 w-full h-full bg-[#0a0a0a] z-40">
+        <a href="./index.html" class="text-white font-medium no-underline hover:text-[#bdbdbd] text-6xl tracking-tight">HOME</a>
+        <a href="./about.html" class="text-white font-medium no-underline hover:text-[#bdbdbd] text-6xl tracking-tight">ABOUT</a>
+        <a href="./projects.html" class="text-white font-medium no-underline hover:text-[#bdbdbd] text-6xl tracking-tight">PROJECTS</a>
+        <a href="./contact.html" class="text-white font-medium no-underline hover:text-[#bdbdbd] text-6xl tracking-tight">CONTACT</a>            
+    </div>
+
+    <div id="title-container">
+        <h1 class="text-white font-medium text-[72px] md:text-[110px] mb-0 text-center leading-none">
+            CHRISTINE BONOAN
+        </h1>
+        <p id="title-desc">a culmination of what i learn, love, and grow from</p>
+    </div>
+
+    <!-- floating image effects with cursor movement -->
+    <!-- <div id="cursor-img" class="fixed pointer-events-none z-50 opacity-0 transition-opacity duration-300 -translate-x-1/2 -translate-y-1/2">
+        <img id="cursor-img-src" src="" class="w-48 h-64 object-cover">
+    </div> -->
+
+    <script src="script.js"></script>
 </body>
+
+
 </html>
