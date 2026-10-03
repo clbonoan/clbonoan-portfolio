@@ -1061,6 +1061,29 @@ document.addEventListener('keydown', e => {
     }
 });
 
+// copy email to clipboard, with a brief "copied!" confirmation
+function copyEmail(btn) {
+    const email = btn.dataset.email;
+    const hint = btn.nextElementSibling;
+
+    // older browsers or non-https pages: fall back to opening the mail app
+    if (!navigator.clipboard) {
+        window.location.href = 'mailto:' + email;
+        return;
+    }
+
+    navigator.clipboard.writeText(email)
+        .then(() => {
+            hint.textContent = 'copied!';
+            hint.classList.add('copied');
+            setTimeout(() => {
+                hint.textContent = 'click to copy';
+                hint.classList.remove('copied');
+            }, 1500);
+        })
+        .catch(() => { window.location.href = 'mailto:' + email; });
+}
+
 // lightbox functionality for screenshot images
 function openLightbox(src) {
     const lb = document.getElementById('lightbox');
