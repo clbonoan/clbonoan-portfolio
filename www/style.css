@@ -139,7 +139,7 @@ html, body {
 }
 
 #contact-inner {
-    max-width: 900px;
+    max-width: 1100px;
     width: 100%;
     padding: 100px 24px;
     color: white;
@@ -178,6 +178,10 @@ html, body {
     transform-origin: center center;
 }
 
+#section-commonplace.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 nav a.nav-active {
     color: #bdbdbd;
@@ -383,6 +387,48 @@ nav a.nav-active {
     font-size: 16px; 
     line-height: 1.8; 
     margin: 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 80px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;   /* stack on mobile */
+    }
+}
+
+.contact-headline {
+    color: white;
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 400;
+    line-height: 1;
+    margin: 8px 0 24px;
+}
+
+.contact-copy {
+    background: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+.contact-copy-hint {
+    margin-left: 12px;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+    transition: color 0.2s;
+}
+
+.contact-copy-hint.copied {
+    color: white;
 }
 
 .default-desc, .desc {
