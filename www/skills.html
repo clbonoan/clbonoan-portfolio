@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Christine Bonoan</title>
+    <link rel="icon" type="image/x-icon" href="/images/clb-favicon.ico">
+</head>
+<body>
+    <!-- TAILWIND NAVIGATION BAR -->
+    <nav class="p-4 bg-[#0a0a0a] flex items-center fixed w-full text-[15px] z-50" id="main-nav"">
+        <!-- LEFT SIDE NAV -->
+        <div class="absolute left-5">
+            <a href="/" class="text-white font-normal no-underline">CLBONOAN</a>
+        </div>
+        <!-- CENTER NAV -->
+        <div class="hidden md:flex gap-[50px] mx-auto">
+            <a href="#section-home" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]" 
+                data-section="section-home">HOME</a>
+            <a href="#section-about" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]" 
+                data-section="section-about">ABOUT</a>
+            <a href="#section-skills" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]"
+                data-section="section-skills">SKILLS</a>
+            <a href="#section-projects" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]"
+                data-section="section-projects">PROJECTS</a>
+            <a href="#section-contact" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]"
+                data-section="section-contact">CONTACT</a>
+            <span class="text-[#4a4a4a] select-none" aria-hidden="true">|</span>
+            <a href="#section-commonplace" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]"
+                data-section="section-commonplace">COMMONPLACE</a>                    
+        </div>
+        <!-- CLOCK IN NAV BAR -->
+         <div class="hidden md:block absolute right-5 text-white font-normal" id="nav-clock"></div>
+        <!-- hamburger button for mobile view -->
+        <button id="menu-btn" onclick="toggleMenu()" class="md:hidden absolute right-5 
+        text-white font-normal text-[15px] bg-transparent border-none cursor-pointer 
+        tracking-widest">MENU</button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden flex-col gap-4 py-8 pt-16 fixed inset-0 w-full 
+    h-full bg-[#0a0a0a] z-40">
+        <a href="#section-home" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-home">HOME</a>
+        <a href="#section-about" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-about">ABOUT</a>
+        <a href="#section-skills" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-skills">SKILLS</a>        
+        <a href="#section-projects" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-projects">PROJECTS</a>
+        <a href="#section-contact" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-contact">CONTACT</a>
+        <a href="#section-commonplace" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-commonplace">COMMONPLACE</a>                   
+    </div>
+    
+    <!-- SCROLL CONTAINER to wrap all sections -->
+    <div id="scroll-container">
+        <!-- SKILLS SECTION -->
+        <section class="page-section" id="section-skills">
+            <div id="skills-inner">
+                <p class="skills-label">Languages</p>
+                <p class="skills-desc">
+                    Python, C++, HTML/CSS, JavaScript, SQL, PHP, Rust
+                </p>
+ 
+                <div class="divider"></div>
+ 
+                <p class="skills-label">Frameworks & Libraries</p>
+                <p class="skills-desc">
+                    Flask, scikit-learn, OpenCV, NumPy, Pandas, Matplotlib
+                </p>
+ 
+                <div class="divider"></div>
+ 
+                <p class="skills-label">Tools & Platforms</p>
+                <p class="skills-desc">
+                    Raspberry Pi, Docker, AWS, SST, Git, MySQL, Zigbee2MQTT, MQTT
+                </p>
+
+                <div class="divider"></div>
+                
+                <p class="skills-label">Concepts</p>
+                <p class="skills-desc">
+                    Object-oriented design, Machine learning, Distributed systems, Computer networks, 
+                    IoT & Embedded systems, Image processing
+                </p>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section class="page-section" id="section-projects">
+            <div id="projects-content">
+                <p class="desc">Loading...</p>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="page-section" id="section-contact">
+            <div id="contact-content">
+                <p class="desc">Loading...</p>
+            </div>
+        </section>
+
+        <!-- COMMONPLACE SECTION -->
+        <section class="page-section" id="section-commonplace">
+            <div id="commonplace-content">
+                <p class="desc">Loading...</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- CASE STUDY PANEL -->
+    <div id="case-study-panel" aria-hidden="true">
+        <button class="cs-close" id="cs-close-btn" onclick="closeCase()">✕ close</button>
+        <div id="cs-content"></div>
+    </div>
+
+    <!-- LIGHTBOX -->    
+    <div id="lightbox" aria-hidden="true">
+        <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+
+</html>
