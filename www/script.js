@@ -64,7 +64,19 @@ if (titleContainer) {
         preload.src = src;
     });
 
-    let lastImageIndex = -1; 
+    // shuffle images: every image shows once before any repeats
+    let deck = [];
+    let lastImage = null;
+
+    function shuffle(arr) {
+        // fisher-yates shuffle
+        for (let i = arr.length -1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+
     // cursor positioning for image placement
     let lastX = null;
     let lastY = null;
@@ -77,12 +89,15 @@ if (titleContainer) {
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
     function getRandomImage() {
-        let index;
-        do {
-            index = Math.floor(Math.random() * images.length);
-        } while (index === lastImageIndex && images.length > 1);
-        lastImageIndex = index;
-        return images[index];
+        if (deck.length === 0) {
+            deck = shuffle([...images]);
+            // avoid the same image back-to-back across a reshuffle
+            if (deck.length > 1 && deck[deck.length - 1] === lastImage) {
+                [deck[0], deck[deck.length - 1]] = [deck[deck.length - 1], deck[0]];
+            }
+        }
+        lastImage = deck.pop();
+        return lastImage;
     }
 
     function getDistance(x1, y1, x2, y2) {
@@ -457,7 +472,7 @@ if (scrollContainer) {
         fetchInner('./commonplace.html', '#commonplace-inner')
             .then(html => { commonplaceContentEl.innerHTML = html; })
             .catch(() => { commonplaceContentEl.innerHTML =
-                '<p style="color:rgba(255,255,255,0.4);text-align:center">Commonplace coming soon.</p>'; });
+                '<p style="color:rgba(255,255,255,0.4);text-align:center">work in progress.</p>'; });
  
         scrollContainer.addEventListener('scroll', () => {
             const scrollY = scrollContainer.scrollTop;
@@ -870,15 +885,22 @@ function buildGrid() {
 }
 
 // case study open/close
-function openCase(id) {
+function openCase(id, addHistory = true) {
     const p = PROJECTS.find(x => x.id === id);
     if (!p) return;
 
     const panel = document.getElementById('case-study-panel');
     const content = document.getElementById('cs-content')
+    const wasOpen = panel.classList.contains('open');
 
     // build next projects (all except current, max 3)
-    const others = PROJECTS.filter(x => x.id !== id).slice(0, 3);
+    // the 3 projects that come after current selected, wrapping back to the start
+    const currentIndex = PROJECTS.findIndex(x => x.id === id);
+    const count = Math.min(3, PROJECTS.length - 1);
+    const others = [];
+    for (let i = 1; i <= count; i++) {
+        others.push(PROJECTS[(currentIndex + i) % PROJECTS.length]);
+    }
     const nextTiles = others.map(o => {
         const bgStyle = o.heroImg
             ? `background-image: url('${o.heroImg}'); background-size: cover; background-position: center;`
@@ -1001,14 +1023,35 @@ function openCase(id) {
     panel.classList.add('open');
     panel.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+
+    if (addHistory) {
+        if (wasOpen) history.replaceState({ caseStudy: id }, '');
+        else history.pushState({ caseStudy: id }, '');
+    }
 }
 
-function closeCase() {
+function hideCase() {
     const panel = document.getElementById('case-study-panel');
     panel.classList.remove('open');
     panel.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
 }   
+
+// close button and Escape: step back in history, which triggers the hide below
+function closeCase() {
+    if (history.state && history.state.caseStudy) history.back();
+    else hideCase();
+}
+
+// back/forward buttons
+window.addEventListener('popstate', e => {
+    closeLightbox();
+    if (e.state && e.state.caseStudy) openCase(e.state.caseStudy, false);   // forward button reopens
+    else hideCase();
+});
+
+// if the page is reloaded while a project was open, start clean
+if (history.state && history.state.caseStudy) history.replaceState(null, '');
 
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
