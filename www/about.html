@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Christine Bonoan</title>
+    <link rel="icon" type="image/x-icon" href="/images/clb-favicon.ico">
+</head>
+<body>
+    <!-- TAILWIND NAVIGATION BAR -->
+    <nav class="p-4 bg-[#0a0a0a] flex items-center fixed w-full text-[15px] z-50" id="main-nav"">
+        <!-- LEFT SIDE NAV -->
+        <div class="absolute left-5">
+            <a href="/" class="text-white font-normal no-underline">CLBONOAN</a>
+        </div>
+        <!-- CENTER NAV -->
+        <div class="hidden md:flex gap-[50px] mx-auto">
+            <a href="#section-home" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]" 
+                data-section="section-home">HOME</a>
+            <a href="#section-about" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]" 
+                data-section="section-about">ABOUT</a>
+            <a href="#section-skills" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]"
+                data-section="section-skills">SKILLS</a>
+            <a href="#section-projects" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]"
+                data-section="section-projects">PROJECTS</a>
+            <a href="#section-contact" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]"
+                data-section="section-contact">CONTACT</a>
+            <span class="text-[#4a4a4a] select-none" aria-hidden="true">|</span>
+            <a href="#section-commonplace" class="nav-link text-white font-normal no-underline hover:text-[#bdbdbd]"
+                data-section="section-commonplace">COMMONPLACE</a>            
+          
+        </div>
+        <!-- CLOCK IN NAV BAR -->
+         <div class="hidden md:block absolute right-5 text-white font-normal" id="nav-clock"></div>
+        <!-- hamburger button for mobile view -->
+        <button id="menu-btn" onclick="toggleMenu()" class="md:hidden absolute right-5 
+        text-white font-normal text-[15px] bg-transparent border-none cursor-pointer 
+        tracking-widest">MENU</button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden flex-col gap-4 py-8 pt-16 fixed inset-0 w-full 
+    h-full bg-[#0a0a0a] z-40">
+        <a href="#section-home" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-home">HOME</a>
+        <a href="#section-about" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-about">ABOUT</a>
+        <a href="#section-skills" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-skills">SKILLS</a>        
+        <a href="#section-projects" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-projects">PROJECTS</a>
+        <a href="#section-contact" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-contact" >CONTACT</a>
+        <a href="#section-commonplace" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
+            text-6xl tracking-tight nav-link" data-section="section-commonplace" >CONTACT</a>                    
+    </div>
+    
+    <!-- SCROLL CONTAINER to wrap all sections -->
+    <div id="scroll-container">
+        <!-- ABOUT SECTION -->
+        <section class="page-section" id="section-about">
+            <div id="about-inner">
+                <div style="overflow: hidden;">
+                    <p class="about-label">Who I Am</p>
+                    <img src="/images/aboutme.jpg" alt="christine bonoan" id="aboutme">
+                    <p class="about-desc">
+                        Hi! My name is Christine, and I like understanding how things break. 
+                        Not in a destructive way, more that I've always been drawn to edge cases, 
+                        failure modes, and the parts of a system nobody thinks to test. That instinct 
+                        is what drew me to embedded and test engineering. There's something
+                        meaningful about working on systems where the stakes are real, where 
+                        software isn't just logic on a screen, but something that has to 
+                        hold up in the world. 
+                        <br><br>
+                        Outside of that, I'm usually doing something with my hands or 
+                        my head. I snowboard when I can, build and create when I'm home, 
+                        read when I need to slow down, and dive into music when I need 
+                        something that gives me an answer. I think that mix of physical, 
+                        creative, and analytical spaces shapes how I approach problems
+                        more than any class I've taken.
+                        <br><br>
+                        I care about building things that actually work, and I've learned
+                        that figuring out <i>why</i> something doesn't is often more 
+                        interesting.
+                    </p>
+                </div>
+                
+                <div class="divider"></div>
+ 
+                <p class="about-label">Background</p>
+                <p class="about-desc">
+                    I recently graduated from CSU Bakersfield with a Computer Science degree. 
+                    However, this path wasn't linear. I started at UC Irvine studying Criminology 
+                    and graduated in 2022. Life had other plans, and although doors felt like they were 
+                    closing in ways I didn't see coming, others opened. It was a hard
+                    reset, but it pointed me in this direction.
+                    <br><br>
+                    My path through CS has been shaped by both lectures and moments where
+                    something just clicked, like the first time I got a Raspberry Pi. Even 
+                    though it was for a class project, I further stumbled into electronics and
+                    realized how much I didn't know but wanted to continue learning. Building a 
+                    smart lighting system and feeling that satisfaction from code controlling
+                    something physical peaked my interests in ways I didn't expect. CS is 
+                    fundamentally a software discipline, but those experiences kept pulling 
+                    me toward the hardware side of things, toward systems that don't just run, but 
+                    interact with the world.
+                    <br><br>
+                    Those experiences pointed me to the edge where software meets hardware. 
+                    I've spent time since then chasing that feeling that hands-on work and
+                    creating things that exist outside a screen bring.
+                </p>
+ 
+                <div class="divider"></div>
+ 
+                <p class="about-label">Currently</p>
+                <p class="about-desc">
+                    Recently graduated and on the hunt for roles in test engineering and embedded systems. 
+                    In the meantime, I'm currently employed at CSE Medical Transport as a Billing/Administrative Clerk
+                    and have been at this position since 2019. While I'm searching, I've been keeping busy by self-studying 
+                    engineering material to fill the gaps a CS degree doesn't always cover. I'm also building projects 
+                    on the side to put that knowledge to use.
+                    <br><br>
+                    Always open to connecting, so feel free to reach out!
+                </p>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="page-section" id="section-skills">
+            <div id="skills-content">
+                <p class="default-desc">Loading...</p>
+            </div> 
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section class="page-section" id="section-projects">
+            <div id="projects-content">
+                <p class="desc">Loading...</p>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="page-section" id="section-contact">
+            <div id="contact-content">
+                <p class="desc">Loading...</p>
+            </div>
+        </section>
+
+        <!-- COMMONPLACE SECTION -->
+        <section class="page-section" id="section-commonplace">
+            <div id="commonplace-content">
+                <p class="desc">Loading...</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
