@@ -245,36 +245,7 @@ if (scrollContainer) {
         const sectionProjects = document.getElementById('section-projects');
         const sectionContact = document.getElementById('section-contact');
         const sectionCommonplace = document.getElementById('section-commonplace');
- 
-        // // fetch and inject all four downstream pages
-        // fetchInner('./about.html', '#about-inner')
-        //     .then(html => { document.getElementById('about-content').innerHTML = html; })
-        //     .catch(() => { document.getElementById('about-content').innerHTML =
-        //         '<p style="color:rgba(255,255,255,0.4);text-align:center">About coming soon.</p>'; });
- 
-        // fetchInner('./skills.html', '#skills-inner')
-        //     .then(html => { document.getElementById('skills-content').innerHTML = html; })
-        //     .catch(() => { document.getElementById('skills-content').innerHTML =
-        //         '<p style="color:rgba(255,255,255,0.4);text-align:center">Skills coming soon.</p>'; });
-
-        // fetchInner('./projects.html', '#projects-inner')
-        //     .then(html => {
-        //         document.getElementById('projects-content').innerHTML = html;
-        //         buildGrid();
-        //     })
-        //     .catch(() => { document.getElementById('projects-content').innerHTML =
-        //         '<p style="color:rgba(255,255,255,0.4);text-align:center">Projects coming soon.</p>'; });
-        
-        // fetchInner('./contact.html', '#contact-inner')
-        //     .then(html => { document.getElementById('contact-content').innerHTML = html; })
-        //     .catch(() => { document.getElementById('contact-content').innerHTML =
-        //         '<p style="color:rgba(255,255,255,0.4);text-align:center">Contact coming soon.</p>'; });
-
-        // fetchInner('./commonplace.html', '#commonplace-inner')
-        //     .then(html => { document.getElementById('commonplace-content').innerHTML = html; })
-        //     .catch(() => { document.getElementById('commonplace-content').innerHTML =
-        //         '<p style="color:rgba(255,255,255,0.4);text-align:center">Commonplace coming soon.</p>'; });
- 
+  
         scrollContainer.addEventListener('scroll', () => {
             const scrollY = scrollContainer.scrollTop;
  
@@ -847,42 +818,6 @@ const PROJECTS = [
         tileGradient: 'linear-gradient(135deg, #0a0a0a 0%, #1a0f1a 100%)',
     },
 ];
-
-// // build catalog grid
-// function buildGrid() {
-//     const grid = document.getElementById('proj-grid');
-//     if (!grid) return;
-
-//     PROJECTS.forEach((p, i) => {
-//         const tile = document.createElement('div');
-//         tile.className = 'proj-tile';
-//         tile.setAttribute('role', 'button');
-//         tile.setAttribute('tabindex', '0');
-//         tile.setAttribute('aria-label', `Open ${p.name} case study`);
-
-//         const bgStyle = p.heroImg
-//             ? `background-image: url('${p.heroImg}'); background-size: cover; background-position: center;`
-//             : `background: ${p.tileGradient};`;
-        
-//         tile.innerHTML = `
-//             <div class="proj-tile-bg" style="${bgStyle}"></div>
-//             <div class="proj-tile-overlay"></div>
-//             <div class="proj-tile-meta">
-//                 <span class="proj-tile-index">0${i + 1} - ${p.type}</span>
-//                 <span class="proj-tile-name">${p.name}</span>
-//                 <span class="proj-tile-desc">${p.shortDesc}</span>
-//                 <span class="proj-tile-hint">view project →</span>
-//             </div>
-//         `;
-
-//         tile.addEventListener('click', () => openCase(p.id));
-//         tile.addEventListener('keydown', e => {
-//             if (e.key === 'Enter' || e.key === ' ') openCase(p.id);
-//         });
-
-//         grid.appendChild(tile);
-//     });
-// }
 
 // attach click handlers to the static tiles
 function buildGrid() {
