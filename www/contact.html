@@ -50,7 +50,7 @@
         <a href="#section-contact" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
             text-6xl tracking-tight nav-link" data-section="section-contact">CONTACT</a>
         <a href="#section-commonplace" onclick="closeMenu()" class="text-white font-medium no-underline hover:text-[#bdbdbd] 
-            text-6xl tracking-tight nav-link" data-section="section-commonplace">COMMONPLACE</a>                        
+            text-6xl tracking-tight nav-link" data-section="section-commonplace">COMMONS</a>                        
     </div>
 
     <!-- SCROLL CONTAINER to wrap all sections -->
@@ -58,32 +58,43 @@
         <!-- PROJECTS SECTION -->
         <section class="page-section" id="section-contact">
             <div id="contact-inner">
-                <p class="contact-label">CONTACT</p>
-                <p class="contact-desc">
-                    I'm currently seeking full-time roles in test engineering and embedded systems. <br>
-                    Feel free to reach out, I'd love to connect!
-                </p>
+                <!-- <p class="contact-label">CONTACT</p> -->
+                <div class="contact-grid">
+                    <!-- LEFT: headline and pitch -->
+                    <div>
+                        <h2 class="contact-headline">LET'S<br>CONNECT</h2>
+                        <p class="contact-desc">
+                            I'm currently seeking full-time roles in test engineering and embedded systems. <br>
+                            Feel free to reach out, I'd love to connect!
+                        </p>
+                    </div>
 
-                <br>
-                
-                <p class="contact-label">Email</p>
-                <p class="contact-desc"><a href="mailto:clbonoan@gmail.com" class="contact-link">clbonoan@gmail.com</a></p>
+                    <!-- RIGHT: links -->
+                <div>
+                    <p class="contact-label">Email</p>
+                    <p class="contact-desc">
+                        <button type="button" class="contact-link contact-copy"
+                            data-email="clbonoan@gmail.com" onclick="copyEmail(this)">clbonoan@gmail.com</button>
+                        <span class="contact-copy-hint">click to copy</span>
+                    </p>
 
-                <div class="divider"></div>
+                    <div class="divider"></div>
 
-                <p class="contact-label">LinkedIn</p>
-                <p class="contact-desc"><a href="https://linkedin.com/in/clbonoan" target="_blank" class="contact-link">linkedin.com/in/clbonoan</a></p>
+                    <p class="contact-label">LinkedIn</p>
+                    <p class="contact-desc"><a href="https://linkedin.com/in/clbonoan" target="_blank" class="contact-link">linkedin.com/in/clbonoan</a></p>
 
-                <div class="divider"></div>
+                    <div class="divider"></div>
 
-                <p class="contact-label">GitHub</p>
-                <p class="contact-desc"><a href="https://github.com/clbonoan" target="_blank" class="contact-link">github.com/clbonoan</a></p>
-                
-                <div class="divider"></div>
+                    <p class="contact-label">GitHub</p>
+                    <p class="contact-desc"><a href="https://github.com/clbonoan" target="_blank" class="contact-link">github.com/clbonoan</a></p>
+                    
+                    <div class="divider"></div>
 
-                <p class="contact-label">Resume</p>
-                <!-- <p class="contact-desc">coming soon!</p> -->
-                <p class="contact-desc"><a href="/assets/clbonoan-resume-sw.pdf" target="_blank" class="contact-link">view resume ↗</a></p>
+                    <p class="contact-label">Resume</p>
+                    <!-- <p class="contact-desc">coming soon!</p> -->
+                    <p class="contact-desc"><a href="/assets/clbonoan-resume-sw.pdf" target="_blank" rel="noopener" class="contact-link">view resume ↗</a></p>
+
+                </div>
             </div>
         </section>
 
