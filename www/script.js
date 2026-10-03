@@ -246,34 +246,34 @@ if (scrollContainer) {
         const sectionContact = document.getElementById('section-contact');
         const sectionCommonplace = document.getElementById('section-commonplace');
  
-        // fetch and inject all four downstream pages
-        fetchInner('./about.html', '#about-inner')
-            .then(html => { document.getElementById('about-content').innerHTML = html; })
-            .catch(() => { document.getElementById('about-content').innerHTML =
-                '<p style="color:rgba(255,255,255,0.4);text-align:center">About coming soon.</p>'; });
+        // // fetch and inject all four downstream pages
+        // fetchInner('./about.html', '#about-inner')
+        //     .then(html => { document.getElementById('about-content').innerHTML = html; })
+        //     .catch(() => { document.getElementById('about-content').innerHTML =
+        //         '<p style="color:rgba(255,255,255,0.4);text-align:center">About coming soon.</p>'; });
  
-        fetchInner('./skills.html', '#skills-inner')
-            .then(html => { document.getElementById('skills-content').innerHTML = html; })
-            .catch(() => { document.getElementById('skills-content').innerHTML =
-                '<p style="color:rgba(255,255,255,0.4);text-align:center">Skills coming soon.</p>'; });
+        // fetchInner('./skills.html', '#skills-inner')
+        //     .then(html => { document.getElementById('skills-content').innerHTML = html; })
+        //     .catch(() => { document.getElementById('skills-content').innerHTML =
+        //         '<p style="color:rgba(255,255,255,0.4);text-align:center">Skills coming soon.</p>'; });
 
-        fetchInner('./projects.html', '#projects-inner')
-            .then(html => {
-                document.getElementById('projects-content').innerHTML = html;
-                buildGrid();
-            })
-            .catch(() => { document.getElementById('projects-content').innerHTML =
-                '<p style="color:rgba(255,255,255,0.4);text-align:center">Projects coming soon.</p>'; });
+        // fetchInner('./projects.html', '#projects-inner')
+        //     .then(html => {
+        //         document.getElementById('projects-content').innerHTML = html;
+        //         buildGrid();
+        //     })
+        //     .catch(() => { document.getElementById('projects-content').innerHTML =
+        //         '<p style="color:rgba(255,255,255,0.4);text-align:center">Projects coming soon.</p>'; });
         
-        fetchInner('./contact.html', '#contact-inner')
-            .then(html => { document.getElementById('contact-content').innerHTML = html; })
-            .catch(() => { document.getElementById('contact-content').innerHTML =
-                '<p style="color:rgba(255,255,255,0.4);text-align:center">Contact coming soon.</p>'; });
+        // fetchInner('./contact.html', '#contact-inner')
+        //     .then(html => { document.getElementById('contact-content').innerHTML = html; })
+        //     .catch(() => { document.getElementById('contact-content').innerHTML =
+        //         '<p style="color:rgba(255,255,255,0.4);text-align:center">Contact coming soon.</p>'; });
 
-        fetchInner('./commonplace.html', '#commonplace-inner')
-            .then(html => { document.getElementById('commonplace-content').innerHTML = html; })
-            .catch(() => { document.getElementById('commonplace-content').innerHTML =
-                '<p style="color:rgba(255,255,255,0.4);text-align:center">Commonplace coming soon.</p>'; });
+        // fetchInner('./commonplace.html', '#commonplace-inner')
+        //     .then(html => { document.getElementById('commonplace-content').innerHTML = html; })
+        //     .catch(() => { document.getElementById('commonplace-content').innerHTML =
+        //         '<p style="color:rgba(255,255,255,0.4);text-align:center">Commonplace coming soon.</p>'; });
  
         scrollContainer.addEventListener('scroll', () => {
             const scrollY = scrollContainer.scrollTop;
@@ -527,7 +527,7 @@ const PROJECTS = [
         Two analysis paths run in parallel, a rule-based threshold voter built on handcrafted physical
         thresholds, and a stacked ensemble of Random Forest classifiers feeding a Logistic Regression
         fusion layer. Both paths score the same engineered features, so the site shows users a direct
-        compairson between human-designed logic and a computer-learned pattern. It was designed
+        comparison between human-designed logic and a computer-learned pattern. It was designed
         to be explainable and human-readable rather than a black box.
         <br><br>
         Evaluated on 270 ground-level images (135 real/tampered pairs) via 5-fold cross-validation, the fused
@@ -617,7 +617,7 @@ const PROJECTS = [
             },
             {
                 src: 'images/project1-chart2-sls.jpg',
-                caption: 'Energy cosumption under different lighting conditions'
+                caption: 'Energy consumption under different lighting conditions'
 
             },
             {
@@ -684,7 +684,7 @@ const PROJECTS = [
             },
             {
                 src: 'images/project3-chart2-db.jpg',
-                caption: 'Relational scehma - converted tables with primary and foreign keys'
+                caption: 'Relational schema - converted tables with primary and foreign keys'
             },
         ],
         screenshots: [],
@@ -723,7 +723,7 @@ const PROJECTS = [
         Working with five people on the same codebase was its own challenge. Beyond just dividing up features, we had to actively avoid stepping
         on each other's code and design decisions, which meant a lot more communication than what I was used to on smaller projects. On top of that,
         OpenGL didn't behave consistently across everyone's machines. It ran fine on some setups but broke on older Intel MacBooks, which meant 
-        compatability became a real constraint we had to work around as a team, not just a bug to patch. Between the coordination and cross-device
+        compatibility became a real constraint we had to work around as a team, not just a bug to patch. Between the coordination and cross-device
         issues, this project taught me that getting five people's code to run the same way on every device is sometimes harder than writing the
         code itself.`,        
         heroImg: 'images/project4-se.jpg',
@@ -762,7 +762,7 @@ const PROJECTS = [
         Rust, Tokio, Axum, Protobuf, or SST before this project, so a lot of the work was learning new languages and syntax
         while trying to contribute meaningfully to a team relying on that code working.
         <br><br>
-        The hardst part for me was the AWS and SST deployment side. Getting the infrastructure configured correctly and 
+        The hardest part for me was the AWS and SST deployment side. Getting the infrastructure configured correctly and 
         understanding why something wasn't working when it broke took a lot more trial and error than the application logic
         did. This was partly because deployment issues are harder to reason about from just reading code. Rust added its own
         layer of difficulty too: its strict ownership rules meant state couldn't just be shared the way I was used to from other
@@ -823,7 +823,7 @@ const PROJECTS = [
         personal: `Hackathons are a different kind of pressure I've never experienced. My other projects had months to iterate and be 
         thorough, but this event had a single weekend, so there was no room to second-guess a direction once we picked it. When we did start
         second guessing, we realized how fast time was moving and we knew we had to be more decisive. It taught me what actually matters when
-        there's no time to be careful, where we had to get the core finding right first the polish after.
+        there's no time to be careful, where we had to get the core finding right first then polish after.
         <br><br>
         Creating the infographic was its own shift. Most of my work is aimed at people who can read and understand the methodology
         directly. With the infographic, the goal was to make a real finding land with someone who hadn't seen our process to get our results.
@@ -848,39 +848,50 @@ const PROJECTS = [
     },
 ];
 
-// build catalog grid
-function buildGrid() {
-    const grid = document.getElementById('proj-grid');
-    if (!grid) return;
+// // build catalog grid
+// function buildGrid() {
+//     const grid = document.getElementById('proj-grid');
+//     if (!grid) return;
 
-    PROJECTS.forEach((p, i) => {
-        const tile = document.createElement('div');
-        tile.className = 'proj-tile';
-        tile.setAttribute('role', 'button');
-        tile.setAttribute('tabindex', '0');
-        tile.setAttribute('aria-label', `Open ${p.name} case study`);
+//     PROJECTS.forEach((p, i) => {
+//         const tile = document.createElement('div');
+//         tile.className = 'proj-tile';
+//         tile.setAttribute('role', 'button');
+//         tile.setAttribute('tabindex', '0');
+//         tile.setAttribute('aria-label', `Open ${p.name} case study`);
 
-        const bgStyle = p.heroImg
-            ? `background-image: url('${p.heroImg}'); background-size: cover; background-position: center;`
-            : `background: ${p.tileGradient};`;
+//         const bgStyle = p.heroImg
+//             ? `background-image: url('${p.heroImg}'); background-size: cover; background-position: center;`
+//             : `background: ${p.tileGradient};`;
         
-        tile.innerHTML = `
-            <div class="proj-tile-bg" style="${bgStyle}"></div>
-            <div class="proj-tile-overlay"></div>
-            <div class="proj-tile-meta">
-                <span class="proj-tile-index">0${i + 1} - ${p.type}</span>
-                <span class="proj-tile-name">${p.name}</span>
-                <span class="proj-tile-desc">${p.shortDesc}</span>
-                <span class="proj-tile-hint">view project →</span>
-            </div>
-        `;
+//         tile.innerHTML = `
+//             <div class="proj-tile-bg" style="${bgStyle}"></div>
+//             <div class="proj-tile-overlay"></div>
+//             <div class="proj-tile-meta">
+//                 <span class="proj-tile-index">0${i + 1} - ${p.type}</span>
+//                 <span class="proj-tile-name">${p.name}</span>
+//                 <span class="proj-tile-desc">${p.shortDesc}</span>
+//                 <span class="proj-tile-hint">view project →</span>
+//             </div>
+//         `;
 
-        tile.addEventListener('click', () => openCase(p.id));
+//         tile.addEventListener('click', () => openCase(p.id));
+//         tile.addEventListener('keydown', e => {
+//             if (e.key === 'Enter' || e.key === ' ') openCase(p.id);
+//         });
+
+//         grid.appendChild(tile);
+//     });
+// }
+
+// attach click handlers to the static tiles
+function buildGrid() {
+    document.querySelectorAll('#proj-grid .proj-tile').forEach(tile => {
+        const id = tile.dataset.project;
+        tile.addEventListener('click', () => openCase(id));
         tile.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') openCase(p.id);
+            if (e.key === 'Enter' || e.key === ' ') openCase(id);
         });
-
-        grid.appendChild(tile);
     });
 }
 
